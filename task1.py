@@ -25,17 +25,48 @@ constructor     - should require the student name, studentNumber and grade (in t
 class student:
 
     # properties should be listed first
+    name = ""
+    studentnumber = ""
+    grade = 0
+    courses = []
+    grades = []
+    honornumber = 0
+    honor = False
 
-    def __init__(): # You will need to create your own input parameters for all methods
-        pass
 
-    def __del__():
+    def __init__(self, name, studentnumber, grade): # You will need to create your own input parameters for all methods
+        self.name = name
+        self.studentnumber = studentnumber
+        self.grade = grade
+
+    def getHonorRoll(self, honor, honornumber, grades):
+        grades.sort()
+        honornumber = grades[0] + grades[1] + grades[2] + grades[3] + grades[4]
+        if honornumber >= 86:
+            honor = True
+            print("This student has achieved the honor roll")
+
+        else: 
+            honor = False
+            return honor
+
+    def showGrade(self, courses, grades):
+
+    def showCourses(self, courses,):
+
+    def getCourses(self, courses):
+        self.courses = courses
+
+    def getGrades(self, grades):
+        self.grades = grades
+
+    def __del__(self):
         pass
 
     def average(self):
         pass
 
-def main():
+def constructor():
     # This contains test data that will be used by the autograder.
     # do not modify this function
 
@@ -44,8 +75,8 @@ def main():
     st1.getGrades( [91, 94, 87, 99, 82, 100, 73])
 
     st2 = student("Joe Lunchbox","12346", 11)
-    st1.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
-    st1.getGrades( [71, 98, 93, 95, 68, 81, 71])
+    st2.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
+    st2.getGrades( [71, 98, 93, 95, 68, 81, 71])
 
 
 
