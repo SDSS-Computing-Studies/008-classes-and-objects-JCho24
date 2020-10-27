@@ -66,17 +66,9 @@ class student:
     def getCourses(self, lis1):
         self.courses = lis1
 
-    def getGrades(self, grade1=0,grade2=0,grade3=0,grade4=0,grade5=0,grade6=0,grade7=0):
-        lis1=[]
-        lis1.insert(0,grade1)
-        lis1.insert(1,grade2)
-        lis1.insert(2,grade3)
-        lis1.insert(3,grade4)
-        lis1.insert(4,grade5)
-        lis1.insert(5,grade6)
-        lis1.insert(6,grade7)
-        
-        self.grades=lis1
+    def getGrades(self, lis2):
+
+        self.grades=lis2
 
     def average(self):
         a = self.grades
@@ -88,7 +80,6 @@ class student:
             c=c+d
         c=c/b
         return c
-        print("Your average is " + avg)
 
     def __del__(self):
         print("Exiting the service")
