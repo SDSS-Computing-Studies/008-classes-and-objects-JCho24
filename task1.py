@@ -84,7 +84,7 @@ class student:
         b = len(a)
         c=0
         for i in range(0,b):
-            d=lis[i]
+            d=a[i]
             c=c+d
         c=c/b
         return c
