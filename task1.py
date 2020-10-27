@@ -7,7 +7,7 @@ str name
 str studentNumber
 int grade
 list courses - to corresepond with course names
-list grade - to correspond with grades
+list grades - to correspond with grades
 
 It should have the following methods:
 average()       - determines the mathematical average of all course grades
@@ -30,43 +30,66 @@ class student:
     grade = 0
     courses = []
     grades = []
-    honornumber = 0
-    honor = False
 
-
-    def __init__(self, name, studentnumber, grade): # You will need to create your own input parameters for all methods
+    def __init__(self, name, studentnumber, grade, courses = [], grades = []): # You will need to create your own input parameters for all methods
         self.name = name
         self.studentnumber = studentnumber
         self.grade = grade
-
-    def getHonorRoll(self, honor, honornumber, grades):
-        grades.sort()
-        honornumber = grades[0] + grades[1] + grades[2] + grades[3] + grades[4]
-        if honornumber >= 86:
-            honor = True
-            print("This student has achieved the honor roll")
-
-        else: 
-            honor = False
-            return honor
-
-    def showGrade(self, courses, grades):
-
-    def showCourses(self, courses,):
-
-    def getCourses(self, courses):
         self.courses = courses
-
-    def getGrades(self, grades):
         self.grades = grades
 
+    def getHonorRoll(self, grades):
+        grades.sort(reverse = True)
+        honornumber = grades[0] + grades[1] + grades[2] + grades[3] + grades[4]
+        honornumber = honornumber / 5
+        honornumber = int(honornumber)
+        if honornumber >= 86:
+            return True
+
+        else: 
+            return False
+
+    def showCourses(self):
+        lis = self.courses
+        answer = print(lis)
+        return answer
+
+    def showGrade(self, ind):
+
+        c1=self.courses
+        course=c1[ind]
+        grades=self.grades
+        gr2=grades[ind]
+        answer=print(self.name + ' has a '+ str(gr2) + '%'+' in ' + str(course)+'.')
+        return answer
+
+    def getCourses(self, lis1):
+        self.courses = lis1
+
+    def getGrades(self, grade1=0,grade2=0,grade3=0,grade4=0,grade5=0,grade6=0,grade7=0):
+        lis1=[]
+        lis1.insert(0,grade1)
+        lis1.insert(1,grade2)
+        lis1.insert(2,grade3)
+        lis1.insert(3,grade4)
+        lis1.insert(4,grade5)
+        lis1.insert(5,grade6)
+        lis1.insert(6,grade7)
+        
+        self.grades=lis1
+
+    def average(self, courses):
+        print("Finding the Average")
+        avg = self.grades[0] + self.grades[1] + self.grades[2] + self.grades[3] + self.grades[4] + self.grades[5] + self.grades[6] + self.grades[7]
+        avg = avg / 7
+        avg = round(avg,1)
+        print("Your average is " + avg)
+
     def __del__(self):
-        pass
+        print("Exiting the service")
 
-    def average(self):
-        pass
 
-def constructor():
+def main():
     # This contains test data that will be used by the autograder.
     # do not modify this function
 
@@ -78,7 +101,5 @@ def constructor():
     st2.getCourses( ["English","Math","Physics","Computers","Geography","Chemistry","French"] )
     st2.getGrades( [71, 98, 93, 95, 68, 81, 71])
 
-
-
-
+    
 main()
