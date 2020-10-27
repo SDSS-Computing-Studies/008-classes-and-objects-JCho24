@@ -79,11 +79,7 @@ class student:
         self.grades=lis1
 
     def average(self):
-        grades = self.grades
-        print("Finding the Average")
-        avg = (grades[0] + grades[1] + grades[2] + grades[3] + grades[4] + grades[5] + grades[6])
-        avg = avg / 7
-        avg = round(avg,1)
+        avg = sum(self.grades) / 7
         print("Your average is " + avg)
 
     def __del__(self):
