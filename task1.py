@@ -81,7 +81,7 @@ class student:
     def average(self):
         grades = self.grades
         print("Finding the Average")
-        avg = (grades[0] + grades[1] + grades[2] + grades[3] + grades[4] + grades[5] + grades[6] + grades[7])
+        avg = (grades[0] + grades[1] + grades[2] + grades[3] + grades[4] + grades[5] + grades[6])
         avg = avg / 7
         avg = round(avg,1)
         print("Your average is " + avg)
