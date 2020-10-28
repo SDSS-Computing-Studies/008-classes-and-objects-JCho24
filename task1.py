@@ -26,21 +26,23 @@ class student:
 
     # properties should be listed first
     name = ""
-    studentnumber = ""
+    studentNumber = ""
     grade = 0
     courses = []
     grades = []
 
-    def __init__(self, name, studentnumber, grade, courses = [], grades = []): # You will need to create your own input parameters for all methods
+    def __init__(self, name, studentNumber, grade, courses = [], grades = []): # You will need to create your own input parameters for all methods
         self.name = name
-        self.studentnumber = studentnumber
+        self.studentNumber = studentNumber
         self.grade = grade
         self.courses = courses
         self.grades = grades
 
-    def getHonorRoll(self, grades):
-        grades.sort(reverse = True)
-        honornumber = grades[0] + grades[1] + grades[2] + grades[3] + grades[4]
+    def getHonorRoll(self):
+        a = self.grades
+
+        a.sort()
+        honornumber = a[-1] + a[-2] + a[-3] + a[-4] + a[-5]
         honornumber = honornumber / 5
         honornumber = int(honornumber)
         if honornumber >= 86:
@@ -72,7 +74,6 @@ class student:
 
     def average(self):
         a = self.grades
-        print(a)
         b = len(a)
         c=0
         for i in range(0,b):
